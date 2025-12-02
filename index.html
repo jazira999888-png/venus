@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Венера: Ғаламшарлық Анализ</title>
+    <!-- Подключение Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Настройка шрифтов и цветов (Венера стилі) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'black-void': '#000000',
+                        'venus-primary': '#fbbf24', // Алтын-сары (Atmosphere)
+                        'venus-accent': '#f43f5e', // Қызыл-қызғылт (Heat/Intensity)
+                        'dark-slate': '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Consolas', 'Monaco', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Полностью черный фон для "космического" вида */
+        body {
+            background-color: #000000;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Эффект свечения для заголовков и карточек (Венера киберпанк стиль) */
+        .neon-glow {
+            text-shadow: 0 0 5px #fbbf24, 0 0 10px #fbbf24; /* Алтын свечение */
+            transition: all 0.3s;
+        }
+        
+        .card-border {
+            border: 1px solid rgba(251, 191, 36, 0.3); /* Легкая рамка (Алтын) */
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); /* Неоновое свечение */
+        }
+        
+        .card-border:hover {
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.7), 0 0 40px rgba(251, 191, 36, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Список фактов */
+        .fact-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .fact-item::before {
+            content: ">>"; /* Футуристический маркер */
+            color: #f43f5e; /* Қызыл-қызғылт маркер */
+            position: absolute;
+            left: 0;
+            font-family: 'Monospace', monospace;
+        }
+
+        .fact-title {
+            color: #fbbf24; /* Венераның негізгі түсі */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-7xl font-extrabold text-white mb-2 tracking-wider">
+            <!-- БАСТЫ ТАҚЫРЫП -->
+            <span class="neon-glow text-venus-primary">ВЕНЕРА</span>
+        </h1>
+        <p class="text-2xl text-venus-accent font-mono">Ғаламшарлық шырақ: Ақпараттық Массив</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto">
+        
+        <!-- Главная карточка Венера -->
+        <section class="p-8 md:p-12 bg-dark-slate card-border rounded-xl mb-12">
+            <div class="flex flex-col items-center justify-center mb-6">
+                
+                <!-- ВЕНЕРАНЫҢ ФОТОСЫ ОСЫ ЖЕРДЕ -->
+                <img 
+                    src="1.png"
+                    alt="Венера планетасының фотосы"
+                    class="w-60 h-60 rounded-full object-cover mb-4 border-2 border-venus-accent shadow-xl shadow-venus-accent/50"
+                    onerror="this.onerror=null; this.src='https://placehold.co/80x80/000000/fbbf24?text=VENUS%0A1.PNG'"
+                >
+                
+                <h2 class="text-4xl font-bold text-venus-primary">Венера (Шолпан)</h2>
+                <p class="text-lg text-slate-400 mt-2 font-mono">Жердің егізі: Системалық сипаттама</p>
+            </div>
+
+            <!-- Общая информация -->
+            <div class="text-lg leading-relaxed text-center mb-8 border-b border-gray-700 pb-6">
+                <p class="text-slate-200">
+                    Венера — Күн жүйесіндегі екінші планета және Жерге ең жақын орналасқан. Ол көлемі мен массасы бойынша Жерге өте ұқсас болғанымен, бетіндегі температурасы Күн жүйесіндегі ең ыстық. Бұл температураға планетаның <span class="text-venus-accent font-bold">күшті парниктік эффектісі</span> себеп болады. Оның қалың атмосферасы беткі қабатын көруді қиындатады.
+                </p>
+            </div>
+
+            <!-- Интересные факты (Қызықты Деректер) -->
+            <h3 class="text-2xl font-semibold text-venus-accent mb-6 neon-glow border-b border-venus-accent pb-2">
+                Қызықты Деректер (DATA ARRAY)
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm md:text-base">
+                
+                <div class="fact-item">
+                    <span class="fact-title">Ең Ыстық Планета:</span>
+                    Венераның орташа беткі температурасы шамамен <span class="text-venus-primary">471 °C</span>. Бұл Меркурийден де ыстық, себебі парниктік эффект.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Қарсы Айналу:</span>
+                    Басқа планеталардың көпшілігінен айырмашылығы, Венера өз осінен <span class="text-venus-accent">кері бағытта</span> (сағат тіліне қарсы) айналады.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Ұзақ Тәулік:</span>
+                    Венераның бір тәулігі (243 Жер тәулігі) оның Күнді айналу уақытынан (бір жылынан - 225 Жер тәулігі) <span class="text-venus-primary">ұзағырақ</span>.
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-title">Атмосферасы:</span>
+                    Атмосферасы негізінен көмірқышқыл газынан (96%) тұрады. Бұлттары <span class="text-venus-accent">күкірт қышқылынан</span> құралған.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Спутниктің Жоқтығы:</span>
+                    Венерада табиғи серіктері (айлары) жоқ. Бұл тек Меркурий мен Венераға тән қасиет.
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-title">Атмосфералық Қысым:</span>
+                    Венера бетіндегі атмосфералық қысым Жердегіден <span class="text-venus-primary">92 есе</span> жоғары. Бұл су астында 900 метр тереңдікке сүңгумен бірдей.
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="text-center mt-auto p-4 text-slate-600 text-sm">
+        <p class="font-mono">
+            [ КОНЕЦ ПЕРЕДАЧИ ДАННЫХ ] | Кәсіби даму мақсатында жасалған.
+        </p>
+    </footer>
+
+</body>
+</html>
